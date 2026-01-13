@@ -88,7 +88,7 @@ df_filtered['Date'] = pd.to_datetime(df_filtered['Date']).dt.date
 df_filtered['Avg CTAT'] = pd.to_numeric(df_filtered['Avg CTAT'], errors='coerce')
 df_filtered['Avg VTAT'] = pd.to_numeric(df_filtered['Avg VTAT'], errors='coerce')
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Average VTAT over time: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Average VTAT over time: </p>", unsafe_allow_html=True)
 df_daily = (df_filtered[['Date', 'Avg VTAT']].drop_duplicates(subset='Date').sort_values('Date'))
    
 fig = px.line(df_daily,
@@ -98,7 +98,7 @@ fig = px.line(df_daily,
     title='Average VTAT Over Time',
     labels={'Avg VTAT': 'Average VTAT'}
 )
-fig.update_traces(line=dict(color='blue', width=2),marker=dict(color='blue'))
+fig.update_traces(line=dict(color=#73C2FF, width=2),marker=dict(color=#73C2FF))
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
@@ -205,6 +205,7 @@ st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Checks if higher Average VTAT impact cancellation rate.
             - This shows that higher time taken by dirver to reach pickup location leads to higher cancellations.""")
+
 
 
 
