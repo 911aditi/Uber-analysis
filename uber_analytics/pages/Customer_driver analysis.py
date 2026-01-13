@@ -111,10 +111,8 @@ fig = px.line(df_daily,
     x='Date',
     y='Avg CTAT',
     markers=True,
-    title='Average CTAT Over Time',
     labels={'Avg CTAT': 'Average CTAT'}
 )
-fig.update_traces(line=dict(color='blue', width=2),marker=dict(color='blue'))
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
@@ -127,7 +125,7 @@ cancel_df = df_filtered[df_filtered['Reason for cancelling by Customer'] != 'Not
 reason_pct = (cancel_df['Reason for cancelling by Customer'].value_counts(normalize=True).reset_index())
 reason_pct.columns = ['Reason', 'Percentage']
 reason_pct['Percentage'] = reason_pct['Percentage'] * 100
-fig = px.bar(reason_pct,x='Reason',y='Percentage',title='Customer Cancellation Reasons (% of Cancelled Rides)',text='Percentage',labels = {'Reason':'Reason for cancellation by customer','Percentage':'% of cancelled rides'})
+fig = px.bar(reason_pct,x='Reason',y='Percentage',text='Percentage',labels = {'Reason':'Reason for cancellation by customer','Percentage':'% of cancelled rides'})
 fig.update_traces(texttemplate='%{text:.1f}%')
 fig.update_layout(xaxis_tickangle=-45)
 fig.update_layout(
@@ -203,6 +201,7 @@ st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Checks if higher Average VTAT impact cancellation rate.
             - This shows that higher time taken by dirver to reach pickup location leads to higher cancellations.""")
+
 
 
 
