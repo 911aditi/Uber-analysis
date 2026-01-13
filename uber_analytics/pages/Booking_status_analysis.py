@@ -92,7 +92,6 @@ fig = px.line(
     df_daily,
     x='Date',
     y='Total_Bookings',
-    title='Total Bookings Over Time',
     markers=True
 )
 st.plotly_chart(fig)
@@ -126,7 +125,6 @@ fig = px.pie(
     df_completed,
     names='Payment_Method_Clean',
     color='Payment_Method_Clean',
-    title='Payment Method Share (Completed Rides)'
 )
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
@@ -156,6 +154,7 @@ st.write("""
 - Helps track operational problems 
 - Rides were mostly incomplete due to Customer's demand.
 """)
+
 
 
 
