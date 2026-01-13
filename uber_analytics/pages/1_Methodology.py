@@ -39,9 +39,9 @@ st.markdown("### 🔍 Data Preview")
 st.dataframe(df.head(50), width='stretch')
 
 st.markdown('### Dataset Description')
-st.markdown("<p style='color:black; text-align:left; font-size:18px'>The dataset contains 50,000+ Uber ride records from 2024 across the Delhi NCR region. Key attributes include ride date and time, time of day, vehicle type,ride distance, booking value, and ride status. These features enable analysis of customer demand patterns, peak hours, and mobility trends.</p>", unsafe_allow_html=True)
+st.markdown("<p style='color:white; text-align:left; font-size:18px'>The dataset contains 50,000+ Uber ride records from 2024 across the Delhi NCR region. Key attributes include ride date and time, time of day, vehicle type,ride distance, booking value, and ride status. These features enable analysis of customer demand patterns, peak hours, and mobility trends.</p>", unsafe_allow_html=True)
 
-st.markdown("<p style='color:black; text-align:left; font-size:18px'>Some important columns used in the analysis along with their description are:</p>", unsafe_allow_html=True)
+st.markdown("<p style='color:white; text-align:left; font-size:18px'>Some important columns used in the analysis along with their description are:</p>", unsafe_allow_html=True)
 schema_df = pd.DataFrame({
     "Column Name": [
         "Booking Status", "Time_of_Day", "Vehicle Type",
@@ -70,4 +70,5 @@ st.write("""
 - **Ride Status:** Combined original flags to classify rides as Completed, Cancelled, or Incomplete
 - **Payment Status:** To clearly state where payment was made or not 
 - All irrelevant columns were removed for clarity and performance
+
 """)
