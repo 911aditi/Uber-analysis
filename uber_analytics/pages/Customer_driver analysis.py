@@ -88,17 +88,15 @@ df_filtered['Date'] = pd.to_datetime(df_filtered['Date']).dt.date
 df_filtered['Avg CTAT'] = pd.to_numeric(df_filtered['Avg CTAT'], errors='coerce')
 df_filtered['Avg VTAT'] = pd.to_numeric(df_filtered['Avg VTAT'], errors='coerce')
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Average VTAT over time: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Average VTAT over time: </p>", unsafe_allow_html=True)
 df_daily = (df_filtered[['Date', 'Avg VTAT']].drop_duplicates(subset='Date').sort_values('Date'))
    
 fig = px.line(df_daily,
     x='Date',
     y='Avg VTAT',
     markers=True,
-    title='Average VTAT Over Time',
     labels={'Avg VTAT': 'Average VTAT'}
 )
-fig.update_traces(line=dict(color='blue', width=2),marker=dict(color='blue'))
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
@@ -106,7 +104,7 @@ st.markdown("""
             - Average time for driver to reach pickup location varies between 2-20 minutes but mostly lies between 5-10 minutes.""")
 
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Average CTAT over time: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Average CTAT over time: </p>", unsafe_allow_html=True)
 df_daily = (df_filtered[['Date', 'Avg CTAT']].drop_duplicates(subset='Date').sort_values('Date'))
 
 fig = px.line(df_daily,
@@ -124,7 +122,7 @@ st.markdown("""
             - Average trip duration from pickup to destination (in minutes) varies from 15 to 45 minutes.
            """)
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Customer Cancellation Reasons: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Customer Cancellation Reasons: </p>", unsafe_allow_html=True)
 cancel_df = df_filtered[df_filtered['Reason for cancelling by Customer'] != 'Not Applicable'].copy()
 reason_pct = (cancel_df['Reason for cancelling by Customer'].value_counts(normalize=True).reset_index())
 reason_pct.columns = ['Reason', 'Percentage']
@@ -143,7 +141,7 @@ st.markdown("""
             - Identifies top issues from customers.
             - Most rides were cancelled by the customers due to wrong address.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Driver Cancellation Reasons: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Driver Cancellation Reasons: </p>", unsafe_allow_html=True)
 cancel_df = df_filtered[df_filtered['Driver Cancellation Reason'] != 'Not Applicable'].copy()
 reason_pct = (cancel_df['Driver Cancellation Reason'].value_counts(normalize=True).reset_index())
 reason_pct.columns = ['Reason', 'Percentage']
@@ -162,7 +160,7 @@ st.markdown("""
             - Shows why drivers cancel
             - Most rides were cancelled by drivers due to customer related issue.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Cancellation Share (Customer vs Driver): </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Cancellation Share (Customer vs Driver): </p>", unsafe_allow_html=True)
 cancelled = df_filtered[df_filtered['Booking Status'].isin(['Cancelled by Customer','Cancelled by Driver'])].copy()
 s_count = cancelled['Booking Status'].value_counts().reset_index()
 s_count.columns = ['Booking Status','Count']
@@ -174,7 +172,7 @@ st.markdown("""
             - Quick snapshot of responsibility.
             - Majority of cancellations are done by driver.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Driver Ratings by Vehicle Type: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Driver Ratings by Vehicle Type: </p>", unsafe_allow_html=True)
 df_clean = df_filtered[df_filtered['Driver Ratings']!=0].copy()
 fig = px.box(df_clean,x= 'Vehicle Type',y='Driver Ratings')
 st.plotly_chart(fig)
@@ -184,7 +182,7 @@ st.markdown("""
             - Ratings mostly lie between 4.1 and 4.3 that means they are consistently high over all vehicle types. This indicates a good driver performance overall.
             - Go Mini shows slightly more rating dispersion → potential areas for quality monitoring.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Customer Ratings by Vehicle Type: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Customer Ratings by Vehicle Type: </p>", unsafe_allow_html=True)
 df_clean = df_filtered[df_filtered['Customer Rating']!=0].copy()
 fig = px.box(df_clean,x= 'Vehicle Type',y='Customer Rating')
 st.plotly_chart(fig)
@@ -193,7 +191,7 @@ st.markdown("""
             - Reveals passenger satisfaction across vehicle categories.
             - Customer satisfaction remains consistently high across all ride categories with median around 4-4.5, indicating standardized service quality across the platform.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>VTAT Distribution for Cancelled vs Completed Rides: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>VTAT Distribution for Cancelled vs Completed Rides: </p>", unsafe_allow_html=True)
 # Create ride outcome column
 df_filtered['ride_outcome'] = df_filtered.apply(lambda x: 'Cancelled' if x['Cancelled Rides by Customer'] == 1 
                              or x['Cancelled Rides by Driver'] == 1
@@ -205,6 +203,7 @@ st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Checks if higher Average VTAT impact cancellation rate.
             - This shows that higher time taken by dirver to reach pickup location leads to higher cancellations.""")
+
 
 
 
