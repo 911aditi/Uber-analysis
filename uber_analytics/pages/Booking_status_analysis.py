@@ -78,7 +78,7 @@ def apply_sidebar_filters(df,booking_status,payment_method,date_range,time_of_da
 
 df_filtered = apply_sidebar_filters(df,selected_booking_status,selected_payment,selected_date_range,selected_time_of_day)
 
-st.markdown("<p style='color:#7A8FA6; text-align: left; font-size:18px; font-weight:bold'>Booking Status distribution: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Booking Status distribution: </p>", unsafe_allow_html=True)
 fig = px.bar(df_filtered,x='Booking Status')
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
@@ -86,7 +86,7 @@ st.markdown("""
 - Shows share of completed, customer cancellations, driver cancellations, incomplete rides.
 - Most of the rides have been completed.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Daily Booking Trends: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Daily Booking Trends: </p>", unsafe_allow_html=True)
 df_daily = df_filtered.groupby('Date').size().reset_index(name='Total_Bookings')
 fig = px.line(
     df_daily,
@@ -101,7 +101,7 @@ st.markdown("""
 - Highlights peaks/troughs in demand across the year.
 - Highest number of booking were seen on Nov 16 that is 462 whereas minimum number of bookings were seen on Aug 22 that is 355.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Bookings by Time of Day vs Day of Week: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Bookings by Time of Day vs Day of Week: </p>", unsafe_allow_html=True)
 day_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 time_order = ['Morning', 'Afternoon', 'Evening', 'Night']
 df_filtered['Day'] = pd.Categorical(df_filtered['Day'], categories=day_order, ordered=True)
@@ -119,7 +119,7 @@ st.markdown("""
             - Reveals ride demand patterns 
             - Evenings are the busiest times of the day specially Monday and Saturday evenings.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Payment Method share: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Payment Method share: </p>", unsafe_allow_html=True)
 df_completed = df_filtered[df_filtered['payment_status']=='Paid'].copy()
 df_completed['Payment_Method_Clean'] = df_completed['Payment Method'].replace({'Credit Card': 'Card','Debit Card': 'Card'})
 fig = px.pie(
@@ -135,7 +135,7 @@ st.markdown("""
             - UPI is the most commonly used payment method.""")
 
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Booking Value vs Ride Distance: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Booking Value vs Ride Distance: </p>", unsafe_allow_html=True)
 fig = px.scatter(df_filtered,x='Ride Distance',y='Booking Value')
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
@@ -144,7 +144,7 @@ st.markdown("""
             - Not always true that longer rides bring higher revenue.""")
 
  
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Incomplete Rides by Reason: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#73C2FF; text-align: left; font-size:18px; font-weight:bold'>Incomplete Rides by Reason: </p>", unsafe_allow_html=True)
 fig = px.scatter(df_filtered,x='Ride Distance',y='Booking Value')
 df_new = df_filtered[df_filtered['Incomplete Rides Reason']!='Not Applicable'].copy()
 r_count = (df_new['Incomplete Rides Reason'].value_counts().reset_index())
@@ -156,6 +156,7 @@ st.write("""
 - Helps track operational problems 
 - Rides were mostly incomplete due to Customer's demand.
 """)
+
 
 
 
