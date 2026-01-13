@@ -78,7 +78,7 @@ def apply_sidebar_filters(df,booking_status,payment_method,date_range,time_of_da
 
 df_filtered = apply_sidebar_filters(df,selected_booking_status,selected_payment,selected_date_range,selected_time_of_day)
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Booking Status distribution: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#276EF1; text-align: left; font-size:18px; font-weight:bold'>Booking Status distribution: </p>", unsafe_allow_html=True)
 fig = px.bar(df_filtered,x='Booking Status')
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
@@ -156,6 +156,7 @@ st.write("""
 - Helps track operational problems 
 - Rides were mostly incomplete due to Customer's demand.
 """)
+
 
 
 
