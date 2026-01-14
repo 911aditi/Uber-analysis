@@ -3,7 +3,7 @@ import streamlit as st
 st.markdown("""
 <style>
 .conclusion-card {
-    background-color: #73C2FF;
+    background-color: #808080;
     padding: 22px;
     border-radius: 14px;
     margin-bottom: 16px;
