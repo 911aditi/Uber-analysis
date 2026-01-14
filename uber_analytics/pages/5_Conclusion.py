@@ -15,7 +15,7 @@ st.markdown("""
     font-weight: 600;
 }
 .card-text {
-    color: #2f2f2f;
+    color: #FFFFFF;
     font-size: 15px;
     line-height: 1.6;
 }
