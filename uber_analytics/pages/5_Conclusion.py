@@ -40,12 +40,12 @@ st.markdown("""
 .insight-card h4 {
     color: #7dd3fc;
     margin-bottom: 6px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .insight-card p {
     color: #e5e7eb;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.6;
 }
 </style>
