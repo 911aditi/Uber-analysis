@@ -1,65 +1,53 @@
 import streamlit as st
 
 st.markdown("""
+### 🚕 Executive Summary
+<strong>High demand exists, but cancellations during peak hours are limiting revenue potential.</strong>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="insight-card">
+<h4>📉 Ride Fulfilment Issue</h4>
+<p>A significant portion of users do not complete rides, indicating operational inefficiencies during high-demand periods.</p>
+</div>
+
+<div class="insight-card">
+<h4>💳 Payment Behavior</h4>
+<p>Users strongly prefer digital payments, reinforcing the importance of seamless UPI-based checkout experiences.</p>
+</div>
+
+<div class="insight-card">
+<h4>🚗 Vehicle Preference</h4>
+<p>Auto rides dominate short-distance travel, highlighting affordability and last-mile connectivity needs.</p>
+</div>
+
+<div class="insight-card">
+<h4>⏰ Time-based Demand</h4>
+<p>Evening hours experience peak demand, requiring better driver allocation and surge optimization.</p>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
 <style>
-.conclusion-card {
-    background-color: #808080;
-    padding: 22px;
+.insight-card {
+    background-color: #0f172a;
+    padding: 20px;
     border-radius: 14px;
     margin-bottom: 16px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.06);
+    border-left: 4px solid #38bdf8;
 }
-.card-title {
-    color: #1f4e79;
+
+.insight-card h4 {
+    color: #7dd3fc;
+    margin-bottom: 6px;
     font-size: 18px;
-    font-weight: 600;
 }
-.card-text {
-    color: #FFFFFF;
+
+.insight-card p {
+    color: #e5e7eb;
     font-size: 15px;
     line-height: 1.6;
-}
-.kpi {
-    font-weight: 600;
-    color: #0b5394;
 }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("📌 Conclusion & Insights")
-
-# Overall Conclusion
-st.markdown("""
-<div class="conclusion-card">
-    <div class="card-title">🚖 Overall Conclusion</div>
-    <div class="card-text">
-        The analysis of Uber ride data reveals strong demand with
-        <span class="kpi">1.5 lakh total bookings</span> and
-        <span class="kpi">₹7.2 Crore</span> in total revenue.
-        However, a substantial number of cancellations and incomplete rides
-        indicate the need for better operational efficiency, especially during peak hours.
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-# Key Insights
-insights = [
-    ("📊 KPI Performance", "Only 93k out of 1.5 lakh bookings were completed, showing scope for improving ride fulfillment."),
-    ("💳 Payment Preference", "UPI is the most commonly used payment mode, highlighting user preference for digital payments."),
-    ("🚗 Travel Mode", "Auto is the most popular mode of transport, especially for short-distance city travel."),
-    ("⏰ Peak Demand", "Evenings—particularly Monday and Saturday—experience the highest ride demand."),
-    ("❌ Cancellations", "Higher driver pickup time leads to increased cancellations, most of which are driver-initiated."),
-    ("⭐ Service Quality", "Go Mini shows higher rating variation, indicating potential quality improvement areas.")
-]
-
-for title, text in insights:
-    st.markdown(f"""
-    <div class="conclusion-card">
-        <div class="card-title">{title}</div>
-        <div class="card-text">{text}</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.success(
-    "📈 Improving driver availability and reducing pickup time during peak hours can significantly lower cancellations and increase customer satisfaction."
-)
