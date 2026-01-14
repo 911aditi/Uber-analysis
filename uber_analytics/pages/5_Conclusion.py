@@ -3,7 +3,7 @@ import streamlit as st
 st.markdown("""
 <style>
 .conclusion-card {
-    background-color: #f3f7ff;
+    background-color: #73C2FF;
     padding: 22px;
     border-radius: 14px;
     margin-bottom: 16px;
@@ -60,7 +60,6 @@ for title, text in insights:
     </div>
     """, unsafe_allow_html=True)
 
-# Final Recommendation
 st.success(
     "📈 Improving driver availability and reducing pickup time during peak hours can significantly lower cancellations and increase customer satisfaction."
 )
