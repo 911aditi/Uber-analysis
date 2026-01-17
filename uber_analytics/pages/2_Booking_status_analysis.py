@@ -117,7 +117,7 @@ st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Reveals ride demand patterns 
-            - Evenings are the busiest times of the day specially Monday and Saturday evenings.""")
+            - Mondays are the busiest among all days sepically Monday afternoons and evenings.""")
 
 st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Payment Method share: </p>", unsafe_allow_html=True)
 df_completed = df_filtered[df_filtered['payment_status']=='Paid'].copy()
@@ -155,6 +155,7 @@ st.write("""
 - Helps track operational problems 
 - Rides were mostly incomplete due to Vehicle Breakdown and Other issues.
 """)
+
 
 
 
