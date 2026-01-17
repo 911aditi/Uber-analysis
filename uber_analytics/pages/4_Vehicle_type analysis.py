@@ -34,7 +34,7 @@ fil_df = df[
     (df['Booking Status'].isin(selected_status))
 ]
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Bookings by Vehicle Type: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:18px; font-weight:bold'>Bookings by Vehicle Type: </p>", unsafe_allow_html=True)
 df_completed = fil_df[fil_df['ride_status']=='Completed']
 fig = px.bar(df_completed,x='Vehicle Type',labels={'count':'Number of bookings'})
 st.plotly_chart(fig)
@@ -71,4 +71,5 @@ st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Reveals which fleet contributes the most to revenue.
             - Auto contributes the highest to the total booking value.""")
+
 
