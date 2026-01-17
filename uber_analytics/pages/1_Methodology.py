@@ -27,7 +27,7 @@ completed_rides = (df['ride_status'] == 'Completed').sum()
 cancelled_rides = (df['ride_status'] == 'Cancelled').sum()
 total_revenue = df['Booking Value'].sum()
 
-st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:22px; font-weight:bold'>📊 Dashboard Overview: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:24px; font-weight:bold'>📊 Dashboard Overview: </p>", unsafe_allow_html=True)
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total Bookings", abbreviate_number(total_bookings))
@@ -35,10 +35,10 @@ col2.metric("Completed Rides", abbreviate_number(completed_rides))
 col3.metric("Cancelled Rides", abbreviate_number(cancelled_rides))
 col4.metric("Total Revenue (₹)", abbreviate_number(total_revenue))
 
-st.markdown("### 🔍 Data Preview")
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:24px; font-weight:bold'>🔍 Data Preview: </p>", unsafe_allow_html=True)
 st.dataframe(df.head(50), width='stretch')
 
-st.markdown('### 📝 Dataset Description')
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:24px; font-weight:bold'>📝 Dataset Description: </p>", unsafe_allow_html=True)
 st.markdown("<p style='color:white; text-align:left; font-size:18px'>The dataset contains 1000+ Uber ride records from 2024 across the Delhi NCR region. Key attributes include ride date and time, time of day, vehicle type,ride distance, booking value, and ride status. These features enable analysis of customer demand patterns, peak hours, and mobility trends.</p>", unsafe_allow_html=True)
 
 st.markdown("<p style='color:white; text-align:left; font-size:18px'>Some important columns used in the analysis along with their description are:</p>", unsafe_allow_html=True)
@@ -64,13 +64,13 @@ schema_df = pd.DataFrame({
 
 st.dataframe(schema_df, width='stretch')
 
-st.subheader("🛠 Data Processing & Feature Engineering")
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:24px; font-weight:bold'>🛠 Data Processing & Feature Engineering: </p>", unsafe_allow_html=True)
 st.write("""
 - **Time_of_Day:** Derived from 'Time' to categorize rides into Morning/Afternoon/Evening/Night
 - **Ride Status:** Combined original flags to classify rides as Completed, Cancelled, or Incomplete
 - **Payment Status:** To clearly state where payment was made or not 
 - All irrelevant columns were removed for clarity and performance
-
 """)
+
 
 
