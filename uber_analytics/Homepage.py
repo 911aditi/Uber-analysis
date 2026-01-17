@@ -7,8 +7,7 @@ with col2:
 
 st.markdown("<p style='color:white; text-align:center; font-size:18px'>Exploring 1000+ Uber ride records from Delhi NCR to understand peak travel hours, popular vehicle types, and ride status trends. </p>", unsafe_allow_html=True)
 
-st.subheader("🎯 Project Objectives")
-
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:30px; font-weight:bold'>🎯 Project Objectives: </p>", unsafe_allow_html=True)
 st.write("""
 - Identify daily booking and customer demand trends
 - Analyze which payment methods are mostly used
@@ -16,8 +15,7 @@ st.write("""
 - Explore booking value trends and time-of-day demand patterns
 """)
 
-st.subheader("📈Visualizations Included")
-
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:30px; font-weight:bold'>📈Visualizations Included: </p>", unsafe_allow_html=True)
 st.write("""
 - **Bar Chart:** Booking Status Distribution
 - **Line Chart:** Daily Booking Trends
@@ -27,3 +25,4 @@ st.write("""
 - **Box Plot:** Driver Ratings by Vehicle Type
 
 """)
+
