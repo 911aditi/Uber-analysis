@@ -43,7 +43,7 @@ st.markdown("""
             - Compares popularity of Autos, Go Mini, Sedans, Bikes, UberXL, etc.
             - Most popular vehicle is auto while the least popular is UberXL.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Vehicle type vs Booking Status: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:18px; font-weight:bold'>Vehicle type vs Booking Status: </p>", unsafe_allow_html=True)
 fil_df['Booking_Status_Grouped'] = fil_df['Booking Status'].replace({
     'Cancelled by Customer': 'Cancelled',
     'Cancelled by Driver': 'Cancelled'
@@ -55,7 +55,7 @@ st.markdown("""
             - Shows which vehicles have higher success/cancellation rates.
             - Highest number of rides are booked for auto and most cancellations are also for auto.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Average ride distance by Vehicle Type: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:18px; font-weight:bold'>Average ride distance by Vehicle Type: </p>", unsafe_allow_html=True)
 df_avg = fil_df.groupby('Vehicle Type',observed=True)['Ride Distance'].mean().reset_index()
 fig = px.bar(df_avg,x='Vehicle Type',y='Ride Distance',labels={'Ride Distance': 'Average Ride Distance'})
 st.plotly_chart(fig)
@@ -64,12 +64,13 @@ st.markdown("""
             - Shows which vehicles are used for short vs long trips.
             - All types of vehicles have almost the same average ride distance with bikes having the highest.""")
 
-st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Booking Value by Vehicle Type: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:18px; font-weight:bold'>Booking Value by Vehicle Type: </p>", unsafe_allow_html=True)
 fig = px.bar(fil_df,x='Vehicle Type',y='Booking Value')
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Reveals which fleet contributes the most to revenue.
             - Auto contributes the highest to the total booking value.""")
+
 
 
