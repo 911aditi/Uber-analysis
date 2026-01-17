@@ -27,7 +27,7 @@ completed_rides = (df['ride_status'] == 'Completed').sum()
 cancelled_rides = (df['ride_status'] == 'Cancelled').sum()
 total_revenue = df['Booking Value'].sum()
 
-st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:18px; font-weight:bold'>### 📊 Dashboard Overview: </p>", unsafe_allow_html=True)
+st.markdown("<p style='color:#4FC3F7; text-align: left; font-size:22px; font-weight:bold'>📊 Dashboard Overview: </p>", unsafe_allow_html=True)
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Total Bookings", abbreviate_number(total_bookings))
@@ -72,4 +72,5 @@ st.write("""
 - All irrelevant columns were removed for clarity and performance
 
 """)
+
 
