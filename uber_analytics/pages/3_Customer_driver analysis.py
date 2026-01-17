@@ -95,10 +95,8 @@ fig = px.line(df_daily,
     x='Date',
     y='Avg VTAT',
     markers=True,
-    title='Average VTAT Over Time',
     labels={'Avg VTAT': 'Average VTAT'}
 )
-fig.update_traces(line=dict(color='blue', width=2),marker=dict(color='blue'))
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
@@ -113,10 +111,8 @@ fig = px.line(df_daily,
     x='Date',
     y='Avg CTAT',
     markers=True,
-    title='Average CTAT Over Time',
     labels={'Avg CTAT': 'Average CTAT'}
 )
-fig.update_traces(line=dict(color='blue', width=2),marker=dict(color='blue'))
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
@@ -205,6 +201,7 @@ st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Checks if higher Average VTAT impact cancellation rate.
             - This shows that higher time taken by dirver to reach pickup location leads to higher cancellations.""")
+
 
 
 
