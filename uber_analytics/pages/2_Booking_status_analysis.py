@@ -99,14 +99,14 @@ st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
 - Highlights peaks/troughs in demand across the year.
-- Highest number of booking were seen on Nov 16 that is 462 whereas minimum number of bookings were seen on Aug 22 that is 355.""")
+- Highest number of booking were seen on Nov 8 that is 14.""")
 
 st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Bookings by Time of Day vs Day of Week: </p>", unsafe_allow_html=True)
 day_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 time_order = ['Morning', 'Afternoon', 'Evening', 'Night']
 df_filtered['Day'] = pd.Categorical(df_filtered['Day'], categories=day_order, ordered=True)
 df_filtered['Time_of_Day'] = pd.Categorical(df_filtered['Time_of_Day'], categories=time_order, ordered=True)
-pivot = df.pivot_table(index='Day',columns='Time_of_Day',aggfunc='size',fill_value=0,observed=False)
+pivot = df_filtered.pivot_table(index='Day',columns='Time_of_Day',aggfunc='size',fill_value=0,observed=False)
 fig = px.imshow(pivot,text_auto=True,aspect='auto',color_continuous_scale='YlOrRd')
 fig.update_layout(
     xaxis_title='Time of Day',
@@ -125,8 +125,7 @@ df_completed['Payment_Method_Clean'] = df_completed['Payment Method'].replace({'
 fig = px.pie(
     df_completed,
     names='Payment_Method_Clean',
-    color='Payment_Method_Clean',
-    title='Payment Method Share (Completed Rides)'
+    color='Payment_Method_Clean'
 )
 st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
@@ -154,8 +153,9 @@ st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.write("""
 - Helps track operational problems 
-- Rides were mostly incomplete due to Customer's demand.
+- Rides were mostly incomplete due to Vehicle Breakdown and Other issues.
 """)
+
 
 
 
