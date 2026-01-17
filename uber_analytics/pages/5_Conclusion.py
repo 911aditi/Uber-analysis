@@ -3,28 +3,30 @@ import streamlit as st
 st.markdown("""
 <style>
 .conclusion-card {
-    background-color: #808080;
+    background-color: #0F1C2E;   /* deep blue instead of grey */
     padding: 22px;
     border-radius: 14px;
     margin-bottom: 16px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.06);
+    border-left: 4px solid #4FC3F7;  /* accent highlight */
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
 }
 .card-title {
-    color: #1f4e79;
+    color: #81D4FA;   /* soft cyan */
     font-size: 18px;
     font-weight: 600;
 }
 .card-text {
-    color: #FFFFFF;
+    color: #E3F2FD;   /* off-white for readability */
     font-size: 15px;
     line-height: 1.6;
 }
 .kpi {
     font-weight: 600;
-    color: #0b5394;
+    color: #4FC3F7;   /* highlight KPIs */
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 st.title("📌 Conclusion & Insights")
 
