@@ -125,7 +125,7 @@ cancel_df = df_filtered[df_filtered['Reason for cancelling by Customer'] != 'Not
 reason_pct = (cancel_df['Reason for cancelling by Customer'].value_counts(normalize=True).reset_index())
 reason_pct.columns = ['Reason', 'Percentage']
 reason_pct['Percentage'] = reason_pct['Percentage'] * 100
-fig = px.bar(reason_pct,x='Reason',y='Percentage',title='Customer Cancellation Reasons (% of Cancelled Rides)',text='Percentage',labels = {'Reason':'Reason for cancellation by customer','Percentage':'% of cancelled rides'})
+fig = px.bar(reason_pct,x='Reason',y='Percentage',text='Percentage',labels = {'Reason':'Reason for cancellation by customer','Percentage':'% of cancelled rides'})
 fig.update_traces(texttemplate='%{text:.1f}%')
 fig.update_layout(xaxis_tickangle=-45)
 fig.update_layout(
@@ -156,7 +156,7 @@ st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Shows why drivers cancel
-            - Most rides were cancelled by drivers due to customer related issue.""")
+            - Most rides were cancelled by drivers because the customer was sick.""")
 
 st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Cancellation Share (Customer vs Driver): </p>", unsafe_allow_html=True)
 cancelled = df_filtered[df_filtered['Booking Status'].isin(['Cancelled by Customer','Cancelled by Driver'])].copy()
@@ -178,7 +178,7 @@ st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Compares how satisfied drivers are across different categories.
             - Ratings mostly lie between 4.1 and 4.3 that means they are consistently high over all vehicle types. This indicates a good driver performance overall.
-            - Go Mini shows slightly more rating dispersion → potential areas for quality monitoring.""")
+            - Driver performance is strong across all vehicle categories, with premium and larger vehicles marginally outperforming others in terms of consistency and customer satisfaction.""")
 
 st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Customer Ratings by Vehicle Type: </p>", unsafe_allow_html=True)
 df_clean = df_filtered[df_filtered['Customer Rating']!=0].copy()
@@ -200,7 +200,8 @@ st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Checks if higher Average VTAT impact cancellation rate.
-            - This shows that higher time taken by dirver to reach pickup location leads to higher cancellations.""")
+            - This shows that higher time taken by driver to reach pickup location leads to higher cancellations.""")
+
 
 
 
