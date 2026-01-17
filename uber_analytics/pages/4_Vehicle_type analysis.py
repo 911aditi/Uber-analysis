@@ -62,7 +62,7 @@ st.plotly_chart(fig)
 st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Shows which vehicles are used for short vs long trips.
-            - All types of vehicles have almost the same average ride distance.""")
+            - All types of vehicles have almost the same average ride distance with bikes having the highest.""")
 
 st.markdown("<p style='color:brown; text-align: left; font-size:18px; font-weight:bold'>Booking Value by Vehicle Type: </p>", unsafe_allow_html=True)
 fig = px.bar(fil_df,x='Vehicle Type',y='Booking Value')
@@ -71,3 +71,4 @@ st.markdown("##### CONCLUSION📊")
 st.markdown("""
             - Reveals which fleet contributes the most to revenue.
             - Auto contributes the highest to the total booking value.""")
+
