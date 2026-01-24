@@ -3,26 +3,26 @@ import streamlit as st
 st.markdown("""
 <style>
 .conclusion-card {
-    background-color: #0F1C2E;   /* deep blue instead of grey */
+    background-color: #0F1C2E;   
     padding: 22px;
     border-radius: 14px;
     margin-bottom: 16px;
-    border-left: 4px solid #4FC3F7;  /* accent highlight */
+    border-left: 4px solid #4FC3F7;  
     box-shadow: 0px 6px 18px rgba(0,0,0,0.25);
 }
 .card-title {
-    color: #81D4FA;   /* soft cyan */
+    color: #81D4FA;   
     font-size: 18px;
     font-weight: 600;
 }
 .card-text {
-    color: #E3F2FD;   /* off-white for readability */
+    color: #E3F2FD;   
     font-size: 15px;
     line-height: 1.6;
 }
 .kpi {
     font-weight: 600;
-    color: #4FC3F7;   /* highlight KPIs */
+    color: #4FC3F7;   
 }
 </style>
 """, unsafe_allow_html=True)
